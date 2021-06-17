@@ -37,15 +37,15 @@ void deleteNode(int i){
 
 void reverseItr(){
     Node* temp = head;
-    Node* temp1;
-    Node* prev = NULL;
+    Node* nextNode;
+    Node* prevNode = NULL;
     while(temp != NULL){
-        temp1 = temp->next;
-        temp->next = prev;
-        prev = temp;
-        temp = temp1;
+        nextNode = temp->next;
+        temp->next = prevNode;
+        prevNode = temp;
+        temp = nextNode;
     }
-    head = prev;
+    head = prevNode;
 }
 
 void reverseRecur(Node* p){
